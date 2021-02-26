@@ -365,7 +365,6 @@ C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.AssemblyInfoInputs.cache
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.AssemblyInfo.cs
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.csproj.CoreCompileInputs.cache
-C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.RazorAssemblyInfo.cache
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.RazorAssemblyInfo.cs
@@ -392,3 +391,9 @@ C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\ref\PerfectProjects.dll
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.pdb
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\PerfectProjects.genruntimeconfig.cache
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\bin\Debug\net5.0\PerfectProjects.DataAccess.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\bin\Debug\net5.0\PerfectProjects.Model.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\bin\Debug\net5.0\PerfectProjects.Utility.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\bin\Debug\net5.0\PerfectProjects.DataAccess.pdb
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\bin\Debug\net5.0\PerfectProjects.Model.pdb
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\bin\Debug\net5.0\PerfectProjects.Utility.pdb

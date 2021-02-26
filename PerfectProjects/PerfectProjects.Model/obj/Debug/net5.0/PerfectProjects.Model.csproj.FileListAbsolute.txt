@@ -1,0 +1,12 @@
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\bin\Debug\net5.0\PerfectProjects.Model.deps.json
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\bin\Debug\net5.0\PerfectProjects.Model.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\bin\Debug\net5.0\ref\PerfectProjects.Model.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\bin\Debug\net5.0\PerfectProjects.Model.pdb
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.csprojAssemblyReference.cache
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.AssemblyInfoInputs.cache
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.AssemblyInfo.cs
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.csproj.CoreCompileInputs.cache
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\ref\PerfectProjects.Model.dll
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects.Model\obj\Debug\net5.0\PerfectProjects.Model.pdb

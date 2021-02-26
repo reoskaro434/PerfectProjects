@@ -31,6 +31,9 @@
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.3",
+          "PerfectProjects.DataAccess": "1.0.0",
+          "PerfectProjects.Model": "1.0.0",
+          "PerfectProjects.Utility": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1615,6 +1618,39 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "PerfectProjects.DataAccess/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.3",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.3",
+          "Microsoft.AspNetCore.Identity.UI": "5.0.3",
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.3",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.3",
+          "PerfectProjects.Model": "1.0.0"
+        },
+        "runtime": {
+          "PerfectProjects.DataAccess.dll": {}
+        },
+        "compile": {
+          "PerfectProjects.DataAccess.dll": {}
+        }
+      },
+      "PerfectProjects.Model/1.0.0": {
+        "runtime": {
+          "PerfectProjects.Model.dll": {}
+        },
+        "compile": {
+          "PerfectProjects.Model.dll": {}
+        }
+      },
+      "PerfectProjects.Utility/1.0.0": {
+        "runtime": {
+          "PerfectProjects.Utility.dll": {}
+        },
+        "compile": {
+          "PerfectProjects.Utility.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4099,6 +4135,21 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "PerfectProjects.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PerfectProjects.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PerfectProjects.Utility/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",

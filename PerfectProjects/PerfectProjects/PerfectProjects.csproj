@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PerfectProjects.DataAccess\PerfectProjects.DataAccess.csproj" />
+    <ProjectReference Include="..\PerfectProjects.Model\PerfectProjects.Model.csproj" />
+    <ProjectReference Include="..\PerfectProjects.Utility\PerfectProjects.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

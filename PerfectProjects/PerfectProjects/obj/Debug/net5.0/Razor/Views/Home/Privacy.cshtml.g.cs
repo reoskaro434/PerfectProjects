@@ -21,13 +21,13 @@ using PerfectProjects;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\Views\_ViewImports.cshtml"
-using PerfectProjects.Models;
+using PerfectProjects.Model.ViewModel;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ddb6bffa5a9b264bf8f89038bf03c234083fd3", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4e9ffd4422963fd876ea97fbddf0b71d303c6b94", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6502ecc9469ed554089be8a6fff946f352f68a3d", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

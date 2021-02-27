@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PerfectProjects.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,7 @@ namespace PerfectProjects.DataAccess.Data
             : base(options)
         {
         }
+
+        DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

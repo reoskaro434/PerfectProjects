@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using PerfectProjects.DataAccess.Data;
 using PerfectProjects.Model;
+using PerfectProjects.Utility;
 
 namespace PerfectProjects.Areas.Identity.Pages.Account
 {
@@ -131,6 +132,19 @@ namespace PerfectProjects.Areas.Identity.Pages.Account
                                             await _signInManager.SignInAsync(user, isPersistent: false);
                                             return LocalRedirect(returnUrl);
                                         }*/
+
+                    //roles
+
+                    if (!await _roleManager.RoleExistsAsync(SD.ROLE_ADMIN))
+                        await _roleManager.CreateAsync(new IdentityRole(SD.ROLE_ADMIN));
+                    if (!await _roleManager.RoleExistsAsync(SD.ROLE_USER))
+                        await _roleManager.CreateAsync(new IdentityRole(SD.ROLE_USER));
+
+
+                    //currently, the "ROLE_USER" is assigning only
+
+                    await _userManager.AddToRoleAsync(user, SD.ROLE_USER);
+
                     return RedirectToPage("/Home/Index");
                 }
                 foreach (var error in result.Errors)

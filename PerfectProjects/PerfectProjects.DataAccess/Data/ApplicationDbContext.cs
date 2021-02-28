@@ -15,5 +15,6 @@ namespace PerfectProjects.DataAccess.Data
         }
 
         DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        DbSet<ShortDescription> ShortDescriptions { get; set; }
     }
 }

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h1>Create short description for your project.</h1>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group col-lg-5">
+        <label>Project Title</label>
+        <input class="form-control" />
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group col-lg-8">
+        <label>Short description</label>
+        <textarea id="textArea" rows="7" class="form-control"></textarea>
+        <span class="text-danger"></span>
+    </div>
+    <div class="form-group col-lg-8">
+        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" on style="display: none;"></p>
+        <p><label for="file" style="cursor: pointer; color:blue">Click HERE to upload image</label></p>
+        <p><img id="output" class="flex-fill" /></p>
+    </div>
+        <div class="offset-lg-6 col-lg-2">
+            <button class="form-control btn btn-light" type="submit">next</button>
+        </div>
+</form>
+
+<script src = "~/js/CreateProjectShortController.js"></script>

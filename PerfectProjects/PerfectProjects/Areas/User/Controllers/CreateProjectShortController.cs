@@ -39,7 +39,7 @@ namespace PerfectProjects.Areas.User.Controllers
                 _db.Add(Model);
                 _db.SaveChanges();
             }
-            return View("ShortPreview");
+            return View("ShortPreview",Model);
         }
     }
 }

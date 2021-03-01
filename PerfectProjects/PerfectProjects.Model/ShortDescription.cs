@@ -17,15 +17,14 @@ namespace PerfectProjects.Model
         [Required]
         public int UserId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Title is required.")]
         [MaxLength(80)]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Description is required.")]
         [MaxLength(400)]
         public string Description { get; set; }
 
-        [Required]
         [MaxLength(83886080)]
         public byte[] Image { get; set; }
     }

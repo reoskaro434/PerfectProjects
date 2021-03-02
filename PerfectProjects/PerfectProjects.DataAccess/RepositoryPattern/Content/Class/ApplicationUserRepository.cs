@@ -15,5 +15,12 @@ namespace PerfectProjects.DataAccess.RepositoryPattern.Content.Class
         {
 
         }
+
+        public string GetUserNickName()
+        {
+         
+
+            return "22";
+        }
     }
 }

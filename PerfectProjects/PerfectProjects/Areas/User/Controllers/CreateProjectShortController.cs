@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PerfectProjects.DataAccess.Data;
+using PerfectProjects.DataAccess.RepositoryPattern;
 using PerfectProjects.Model;
+using PerfectProjects.Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace PerfectProjects.Areas.User.Controllers
 {
     [Area("User")]
     public class CreateProjectShortController : Controller
     {
-        private ApplicationDbContext _db;
-        public CreateProjectShortController(ApplicationDbContext db)
+        private IUnitOfWork _unitOfWork;
+        public CreateProjectShortController(IUnitOfWork UnitOfWork)
         {
-            _db = db;
+            _unitOfWork = UnitOfWork;
         }
         public IActionResult Index()
         {
@@ -36,10 +40,21 @@ namespace PerfectProjects.Areas.User.Controllers
             
             if (ModelState.IsValid)
             {
-                _db.Add(Model);
-                _db.SaveChanges();
+                //_unitOfWork.ShortDescriptions.Add(Model);
+                //_unitOfWork.Save();
+                ShortPreviewModel shortDescriptionModel = new ShortPreviewModel();
+                shortDescriptionModel.ShortDescription = Model;
+
+
+
+                string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+           
+
+
+                return View("ShortPreview", shortDescriptionModel);
             }
-            return View("ShortPreview",Model);
+            return View();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace PerfectProjects.DataAccess.RepositoryPattern
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly ApplicationDbContext _db;
+        protected readonly ApplicationDbContext _db;
 
         public Repository(ApplicationDbContext db)
         {

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PerfectProjects.DataAccess.Data;
+using PerfectProjects.DataAccess.RepositoryPattern;
 using PerfectProjects.Utility;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace PerfectProjects
             services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddRazorPages();
         }
 

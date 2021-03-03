@@ -10,6 +10,6 @@ namespace PerfectProjects.Model.ViewModel
     {
         public ShortDescription ShortDescription { get; set; }
         public string NickName { get; set; }
-      
+        public string ImageString { get; set; }
     }
 }

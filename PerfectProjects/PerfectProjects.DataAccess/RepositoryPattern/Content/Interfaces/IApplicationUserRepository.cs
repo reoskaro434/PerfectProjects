@@ -10,6 +10,5 @@ namespace PerfectProjects.DataAccess.RepositoryPattern.Content.Interfaces
 {
     public interface IApplicationUserRepository : IRepository<ApplicationUser>
     {
-        string GetUserNickName();
     }
 }

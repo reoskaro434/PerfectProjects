@@ -5,6 +5,7 @@
 };
 
 window.onresize = resizeImg;
+window.onload = resizeImg;
 
 function resizeImg() {
     var image = document.getElementById('output');

@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
+using PerfectProjects.Utility;
 
 namespace PerfectProjects.Areas.User.Controllers
 {
@@ -23,37 +25,30 @@ namespace PerfectProjects.Areas.User.Controllers
         }
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult ShortPreview()//could be not necessary
-        {
-            return View();
+                return View();
         }
         [HttpPost]
         public IActionResult Create(ShortDescription Model)
         {
-            var tmpFiles = HttpContext.Request.Form.Files;
-            Stream stream = tmpFiles[0].OpenReadStream();
-            MemoryStream memStream = new MemoryStream();
-            stream.CopyTo(memStream);
-            Model.Image = memStream.ToArray();
-            
+            Model.Image = ImageManager.ConvertToByteArray(HttpContext.Request.Form.Files[0]);
+            string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                var currentUser = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).ToArray();
+
+                Model.UserId = id;
             if (ModelState.IsValid)
             {
-                //_unitOfWork.ShortDescriptions.Add(Model);
-                //_unitOfWork.Save();
+                
+                _unitOfWork.ShortDescriptions.Add(Model);
+                _unitOfWork.Save();
                 ShortPreviewModel shortDescriptionModel = new ShortPreviewModel();
                 shortDescriptionModel.ShortDescription = Model;
 
-
-
-                string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-           
-
+                shortDescriptionModel.NickName = currentUser[0].NickName;
+                shortDescriptionModel.ImageString = ImageManager.ConvertToString(Model.Image);
 
                 return View("ShortPreview", shortDescriptionModel);
             }
+       
             return View();
         }
     }

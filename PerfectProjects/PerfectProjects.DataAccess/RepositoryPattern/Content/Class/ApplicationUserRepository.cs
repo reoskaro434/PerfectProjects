@@ -11,16 +11,8 @@ namespace PerfectProjects.DataAccess.RepositoryPattern.Content.Class
 {
     public class ApplicationUserRepository : Repository<ApplicationUser>, IApplicationUserRepository
     {
-        public ApplicationUserRepository(ApplicationDbContext db): base(db)
+        public ApplicationUserRepository(ApplicationDbContext db) : base(db)
         {
-
-        }
-
-        public string GetUserNickName()
-        {
-         
-
-            return "22";
         }
     }
 }

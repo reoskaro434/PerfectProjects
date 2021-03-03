@@ -14,8 +14,7 @@ namespace PerfectProjects.Model
         public int Id { get; set; }
      
         [ForeignKey("UserId")]
-        [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [Required(ErrorMessage = "Title is required.")]
         [MaxLength(80)]

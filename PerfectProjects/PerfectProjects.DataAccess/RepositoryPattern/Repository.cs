@@ -26,6 +26,11 @@ namespace PerfectProjects.DataAccess.RepositoryPattern
             _db.AddRange(entities);
         }
 
+        public void Reload(TEntity entity)
+        {
+            _db.Entry(entity).GetDatabaseValues();
+        }
+
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return _db.Set<TEntity>().Where(predicate);

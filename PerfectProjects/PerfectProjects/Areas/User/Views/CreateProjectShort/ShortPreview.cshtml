@@ -23,7 +23,8 @@
         </div>
     </div>
     <div>
-        <button class="btn btn-success">next</button>
+        <button type="submit" asp-action="RedirectToLongDescription" class="btn btn-success">next</button>
+        <button type="submit" asp-action="Edit" asp-route-id="@Model.ShortDescription.Id" class="btn btn-success">back</button>
         
     </div>
 </form>    

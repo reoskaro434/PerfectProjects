@@ -485,3 +485,4 @@ C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\Razor\Areas\User\Views\_ViewStart.cshtml.g.cs
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\Razor\Areas\User\Views\CreateProjectShort\Index.cshtml.g.cs
 C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\Razor\Areas\User\Views\CreateProjectShort\ShortPreview.cshtml.g.cs
+C:\Users\reosk\Documents\GitHub\PerfectProjects\PerfectProjects\PerfectProjects\obj\Debug\net5.0\Razor\Areas\User\Views\UserProfile\Index.cshtml.g.cs

@@ -35,7 +35,7 @@ namespace PerfectProjects.Areas.User.Controllers
 
             if (Model.Id == 0)
             {
-              
+              if(HttpContext.Request.Form.Files.Count>0)
                 Model.Image = ImageManager.ConvertToByteArray(HttpContext.Request.Form.Files[0]);
                 Model.UserId = id;
                 if (ModelState.IsValid)

@@ -73,8 +73,12 @@ body {
 }
 
 .dark-theme, .dark-theme:focus, .dark-theme:valid{
-    background-color: #232423
+    background-color: #232423;
+    color: white;
 }
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    transition-delay: 3600s;
+    background-color: #232423
+}
+input:autofill{
+
 }

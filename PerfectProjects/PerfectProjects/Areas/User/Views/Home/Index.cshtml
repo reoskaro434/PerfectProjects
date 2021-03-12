@@ -1,4 +1,41 @@
-﻿
+﻿@model PerfectProjects.Model.ViewModel.ShortPreviewModels
+
 <div class="text-center">
-  
+
+    @if (Model != null)
+    {
+
+        foreach (ShortPreviewModel element in Model.shortPreviewModels)
+        {
+
+            <div class="mb-3 justify-content-center text-center border-bottom">
+                <div class="col-md-8 offset-md-2">
+                    <h2>@element.ShortDescription.Title</h2>
+                </div>
+                <div class="col-md-8  offset-2">
+                    <p><img id="output" src="data:image/gif;base64,@element.ImageString" /></p>
+                </div>
+                <div id="textArea" class="col-md-8  offset-md-2">
+                    <p class="text-break">@element.ShortDescription.Description</p>
+                </div>
+                <div class="small col-md-2 offset-md-8">
+                    <p>Author: @element.NickName</p>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+        <div>
+            <p>There are no available projects...</p>
+        </div>
+    }
+
+
+
+
+
+
 </div>
+<script src="~/js/HomePagePicFix.js"></script>

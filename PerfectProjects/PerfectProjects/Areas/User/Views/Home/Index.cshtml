@@ -4,16 +4,16 @@
 
     @if (Model != null)
     {
-
+        int counter = 1;
         foreach (ShortPreviewModel element in Model.shortPreviewModels)
         {
-
+            string output = "output" + (counter++);
             <div class="mb-3 justify-content-center text-center border-bottom">
                 <div class="col-md-8 offset-md-2">
                     <h2>@element.ShortDescription.Title</h2>
                 </div>
                 <div class="col-md-8  offset-2">
-                    <p><img id="output" src="data:image/gif;base64,@element.ImageString" /></p>
+                    <p><img id=@output src="data:image/gif;base64,@element.ImageString" /></p>
                 </div>
                 <div id="textArea" class="col-md-8  offset-md-2">
                     <p class="text-break">@element.ShortDescription.Description</p>
@@ -22,13 +22,14 @@
                     <p>Author: @element.NickName</p>
                 </div>
             </div>
-        }
 
+        }
+        <p hidden id="counter">@counter</p>
     }
     else
     {
         <div>
-            <p>There are no available projects...</p>
+            <p >There are no available projects...</p>
         </div>
     }
 

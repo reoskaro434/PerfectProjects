@@ -22,7 +22,9 @@ namespace PerfectProjects.Utility
 
         static public string ConvertToString(byte[] ByteArray)
         {
-            return Convert.ToBase64String(ByteArray);
+            if (ByteArray !=null)
+                return Convert.ToBase64String(ByteArray);
+            else return null;
         }
     }
 }

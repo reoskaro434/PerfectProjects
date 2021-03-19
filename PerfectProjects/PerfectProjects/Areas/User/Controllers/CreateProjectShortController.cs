@@ -25,7 +25,10 @@ namespace PerfectProjects.Areas.User.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            ShortDescription model = new ShortDescription();
+            model.Id = 0;
+            model.UserId = "0";
+            return View(model);
         }
         [HttpPost]
         public IActionResult Create(ShortDescription Model)
@@ -55,6 +58,7 @@ namespace PerfectProjects.Areas.User.Controllers
             }
             else
             {
+                Model.Image = ImageManager.ConvertToByteArray(HttpContext.Request.Form.Files[0]);
                 _unitOfWork.ShortDescriptions.Update(Model);
                 _unitOfWork.Save();
                 ShortPreviewModel shortDescriptionModel = new ShortPreviewModel();
@@ -69,8 +73,6 @@ namespace PerfectProjects.Areas.User.Controllers
         [HttpPost]
         public IActionResult Edit(int id)
         {
-           ShortDescription shortDescription = _unitOfWork.ShortDescriptions.Find(predicate => predicate.Id == id).FirstOrDefault();
-            shortDescription.Image = Array.Empty<byte>();
             return View("Index", _unitOfWork.ShortDescriptions.Find(predicate => predicate.Id == id).FirstOrDefault());
         }
 

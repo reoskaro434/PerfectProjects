@@ -11,6 +11,7 @@ namespace PerfectProjects.Areas.User.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
     }

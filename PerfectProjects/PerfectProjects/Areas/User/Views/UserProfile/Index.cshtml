@@ -3,36 +3,39 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 @using PerfectProjects.Utility;
-
 @{Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
 
 @if (SignInManager.IsSignedIn(User))
 {
+    <div id="XD"></div>
     <div class="col-md-8 offset-md-2 text-center">
         <h1>This is @Model.Nickname's profile!</h1>
         <br />
-
         <br />
     </div>
     <div class="row">
         <div class="col-md-2 text-center">
             <nav id="sidebar">
                 <ul class="list-unstyled components">
-                    <li>
-                        <a onclick="showProjectsLinks()" class="h3" style="cursor:default">My Projects</a>
-                    </li>
+                    <li id="my-projects-li" class="h3" style="cursor:default">My Projects</li>
                     <br />
-                    <li>
-                        <a class="h3" btn>About Me</a>
-                    </li>
+                    <li id="about-me-li" class="h3" style="cursor:default">About Me</li>
                 </ul>
             </nav>
         </div>
         <div class="col-md-6 offset-1 text-center" id="profileContent">
-            @foreach (var i in Model.ShortDescriptions)
-            {
-                <div style="cursor: default; " class="text-center"><a class="lighting-text">@i.Title</a></div>
-            }
+            <div id="project-list">
+                @foreach (var i in Model.ShortDescriptions)
+                {
+                    <div style="cursor: default; " class="text-center"><a class="lighting-text">@i.Title</a></div>
+                }
+            </div>
+            <div hidden id="about-me">
+                <p>@Model.AboutMe</p>
+            </div>
         </div>
     </div>
 }
@@ -42,4 +45,14 @@ else
     <br />
     <h1>Login or create account to show this page. </h1>
 }
+<script>
+    $("#my-projects-li").click(function () {
+        $("#project-list").show();
+        $("#about-me").attr("hidden", "true");
+    });
+    $("#about-me-li").click(function () {
+        $("#project-list").hide();
+        $("#about-me").removeAttr("hidden");
+    });
+</script>
 <script src="~/js/UserProfile.js"></script>

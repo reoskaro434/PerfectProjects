@@ -61,7 +61,6 @@ namespace PerfectProjects.Controllers
                         NickName = user.NickName,
                         ImageString = ImageManager.ConvertToString(element.Image),
                     };
-
                     previewModels.Add(shortPrevModel);
                 }
                 else return null; //smth wrong, returns null

@@ -10,5 +10,6 @@ namespace PerfectProjects.DataAccess.RepositoryPattern.Content.Interfaces
 {
     public interface IShortDescriptionRepository :IRepository<ShortDescription>
     {
+        public IEnumerable<ShortDescription> TakeRequiredRows(int skip, int amount);
     }
 }

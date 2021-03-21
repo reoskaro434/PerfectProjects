@@ -13,7 +13,11 @@ namespace PerfectProjects.DataAccess.RepositoryPattern.Content.Class
     {
         public ShortDescriptionRepository(ApplicationDbContext db):base(db)
         {
+        }
 
+        public IEnumerable<ShortDescription> TakeRequiredRows(int skip, int amount)
+        {
+           return _db.ShortDescriptions.Skip(skip).Take(amount);
         }
     }
 }

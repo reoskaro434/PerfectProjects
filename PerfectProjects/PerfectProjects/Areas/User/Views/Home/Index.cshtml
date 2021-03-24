@@ -24,7 +24,21 @@
             </div>
 
         }
+<form method="post" enctype="multipart/form-data">
+    <div class="d-sm-flex flex-row">
+        <div class=" col-sm-1 offset-sm-4 p-2">
+            <button type="submit" asp-route-SkipCounter="@Model.SkipCounter" asp-action="ClickedBackButton" class="btn btn-danger">back</button>
+        </div>
+
+        <div class=" col-sm-1 offset-sm-2 p-2">
+            <button type="submit" asp-route-SkipCounter="@Model.SkipCounter" asp-action="ClickedNextButton" class="btn btn-danger">next</button>
+        </div>
+        <p hidden>@Model.SkipCounter</p>
+    </div>
+</form>
+
         <p hidden id="counter">@counter</p>
+       
     }
     else
     {

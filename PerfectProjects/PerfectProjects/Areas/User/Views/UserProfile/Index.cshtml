@@ -31,6 +31,7 @@
                 @foreach (var i in Model.ShortDescriptions)
                 {
                     <div style="cursor: default; " class="text-center"><a class="lighting-text">@i.Title</a></div>
+                    <div><input type="checkbox" onclick="LockOrUnlock"><input /></div>
                 }
             </div>
             <div hidden id="about-me">

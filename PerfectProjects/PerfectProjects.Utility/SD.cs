@@ -12,7 +12,7 @@ namespace PerfectProjects.Utility
         public const string ROLE_USER = "User";
         public const string ROLE_GUEST = "Guest";//could be not necessary
 
-        public const int PROJECT_PER_PAGE = 2; //maximum amount of projects per page.
+        public const int PROJECT_PER_PAGE = 4; //maximum amount of projects per page.
 
     }
 }

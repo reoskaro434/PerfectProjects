@@ -17,7 +17,7 @@ namespace PerfectProjects.DataAccess.RepositoryPattern.Content.Class
 
         public IEnumerable<ShortDescription> TakeRequiredRows(int skip, int amount)
         {
-           return _db.ShortDescriptions.Skip(skip).Take(amount);
+            return _db.ShortDescriptions.Where(p => p.IsVisible == true).Skip(skip).Take(amount);
         }
     }
 }

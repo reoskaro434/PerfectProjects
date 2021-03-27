@@ -17,25 +17,38 @@
         <br />
     </div>
     <div class="row">
-        <div class="col-md-2 text-center">
+        <div class="col-md-3 text-center border border-white p-4">
             <nav id="sidebar">
                 <ul class="list-unstyled components">
-                    <li id="my-projects-li" class="h3" style="cursor:default">My Projects</li>
+                    <li id="my-projects-li" class="h3 underline-text" style="cursor:default">My Projects</li>
                     <br />
-                    <li id="about-me-li" class="h3" style="cursor:default">About Me</li>
+                    <li id="about-me-li" class="h3 underline-text" style="cursor:default">About Me</li>
                 </ul>
             </nav>
         </div>
         <div class="col-md-6 offset-1 text-center" id="profileContent">
-            <div id="project-list">
-                @foreach (var i in Model.ShortDescriptions)
-                {
-                    <div style="cursor: default; " class="text-center"><a class="lighting-text">@i.Title</a></div>
-                    <div><input type="checkbox" onclick="LockOrUnlock"><input /></div>
-                }
-            </div>
-            <div hidden id="about-me">
-                <p>@Model.AboutMe</p>
+            <div class="border border-white p-4">
+                <div id="project-list">
+                    @foreach (var i in Model.ShortDescriptions)
+                    {
+                        <div class="row">
+                            <div style="cursor: default; " class="text-center col-8"><a class="underline-text">@i.Title</a></div>
+                            <div class="col-3">
+                                @if (i.IsVisible)
+                                {
+                                    <a asp-route-shortDescriptionId=@i.Id class="btn btn-success d-flex justify-content-center m-1" asp-action="ChangeVisibleToFalse">Public</a>
+                                }
+                                else
+                                {
+                                    <a asp-route-shortDescriptionId=@i.Id class="btn btn-danger d-flex justify-content-center m-1" asp-action="ChangeVisibleToTrue">Private</a>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div hidden id="about-me">
+                    <p>@Model.AboutMe</p>
+                </div>
             </div>
         </div>
     </div>
@@ -46,6 +59,7 @@ else
     <br />
     <h1>Login or create account to show this page. </h1>
 }
+
 <script>
     $("#my-projects-li").click(function () {
         $("#project-list").show();
@@ -56,4 +70,5 @@ else
         $("#about-me").removeAttr("hidden");
     });
 </script>
+
 <script src="~/js/UserProfile.js"></script>

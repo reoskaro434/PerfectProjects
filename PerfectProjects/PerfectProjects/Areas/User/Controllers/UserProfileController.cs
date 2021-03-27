@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PerfectProjects.DataAccess.RepositoryPattern;
+using PerfectProjects.Model;
 using PerfectProjects.Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,51 @@ namespace PerfectProjects.Areas.User.Controllers
                 return View(userProfileViewModel);
             }
             return View();
+        }
+        public IActionResult ChangeVisibleToFalse(int shortDescriptionId)
+        {
+          var description = _unitOfWork.ShortDescriptions.Find(p => p.Id == shortDescriptionId).FirstOrDefault();
+            if (description != null)
+            {
+                description.IsVisible = false;
+                _unitOfWork.ShortDescriptions.Update(description);
+                _unitOfWork.Save();
+                if (_signInManager.IsSignedIn(User))
+                {
+                    UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
+                    string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+                    userProfileViewModel.ShortDescriptions = _unitOfWork.ShortDescriptions.Find(predicate => predicate.UserId == id);
+                    userProfileViewModel.AboutMe = "This is a static information about user. Please, enlarge user's proporties and download it from db.";
+                    userProfileViewModel.Nickname = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).FirstOrDefault().NickName;
+
+                    return View("Index", userProfileViewModel);
+                }
+            }
+            return View("Index");
+        }
+        public IActionResult ChangeVisibleToTrue(int shortDescriptionId)
+        {
+            var description = _unitOfWork.ShortDescriptions.Find(p => p.Id == shortDescriptionId).FirstOrDefault();
+            if (description != null)
+            {
+                description.IsVisible = true;
+                _unitOfWork.ShortDescriptions.Update(description);
+                _unitOfWork.Save();
+                if (_signInManager.IsSignedIn(User))
+                {
+                    UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
+                    string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+                    userProfileViewModel.ShortDescriptions = _unitOfWork.ShortDescriptions.Find(predicate => predicate.UserId == id);
+                    userProfileViewModel.AboutMe = "This is a static information about user. Please, enlarge user's proporties and download it from db.";
+                    userProfileViewModel.Nickname = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).FirstOrDefault().NickName;
+
+                    return View("Index",userProfileViewModel);
+                }
+            }
+            
+            return View("Index");
         }
     }
 }

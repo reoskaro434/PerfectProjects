@@ -83,9 +83,9 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 input:autofill{
 
 }
-.lighting-text:hover {
+.underline-text:hover {
 
-    text-shadow: 2px 2px 5px #f6f6e2;
-
-
+    border-bottom:solid;
+    border-color:white;
+    border-bottom-width:1px;
 }

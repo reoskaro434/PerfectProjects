@@ -9,30 +9,31 @@
 
 
 @if (SignInManager.IsSignedIn(User))
-{
-    <div id="XD"></div>
+{       
+    <br/>
+    <br/>
     <div class="col-md-8 offset-md-2 text-center">
-        <h1>This is @Model.Nickname's profile!</h1>
+        <br />
         <br />
         <br />
     </div>
     <div class="row">
-        <div class="col-md-3 text-center border border-white p-4">
-            <nav id="sidebar">
+        <div class="col-md-3">
+            <div id="p-p-side-bar" class="text-center p-2">
                 <ul class="list-unstyled components">
-                    <li id="my-projects-li" class="h3 underline-text" style="cursor:default">My Projects</li>
-                    <br />
-                    <li id="about-me-li" class="h3 underline-text" style="cursor:default">About Me</li>
+                    <li><p class="logo">This is @Model.Nickname's profile!</p></li>
+                    <li id="my-projects-li" class="layout-element" style="cursor:default">My Projects</li>
+                    <li id="about-me-li" class="layout-element" style="cursor:default">About Me</li>
                 </ul>
-            </nav>
+            </div>
         </div>
         <div class="col-md-6 offset-1 text-center" id="profileContent">
-            <div class="border border-white p-4">
-                <div id="project-list">
+                <div id="project-list" >
                     @foreach (var i in Model.ShortDescriptions)
                     {
-                        <div class="row">
-                            <div style="cursor: default; " class="text-center col-8"><a class="underline-text">@i.Title</a></div>
+                        <div class="row border">
+                            <div style="cursor: default; " class="text-justify col-md-8 mt-2"><a >@i.Title</a>
+                            </div>
                             <div class="col-3">
                                 @if (i.IsVisible)
                                 {
@@ -46,10 +47,9 @@
                         </div>
                     }
                 </div>
-                <div hidden id="about-me">
+                <div hidden id="about-me" class="border">
                     <p>@Model.AboutMe</p>
-                </div>
-            </div>
+                </div>   
         </div>
     </div>
 }

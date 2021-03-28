@@ -2,14 +2,12 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
+  white-space:normal;
   text-align: center;
   word-break: break-all;
 }
-
-/* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #fff;
 }
 
 .btn-primary {
@@ -17,15 +15,6 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   font-size: 14px;
 }
@@ -34,58 +23,62 @@ html {
     font-size: 16px;
   }
 }
-
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
-
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
-
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
-
 body {
-
     margin-bottom: 60px;
-    background-color: #232423;
-    color: #c2c2c2;
+    background-image: url('/image/perfect-projects.png');
+    color: #000000;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 50px;
+    background-color: #362be0;
 }
-
-
-.dark-theme, .dark-theme:focus, .dark-theme:valid{
-    background-color: #232423;
+nav {
+    background-color: #362be0;
+    font-size:20px;
+}
+#project-home {
+  
+}
+main{
+    background-color:white;
+}
+.logo {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size:40px;
+    text-decoration:none;
+    cursor:default;
+}
+.layout-element:hover{
+    background-color: #2a21b9;
     color: white;
 }
-input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: #232423
+.layout-element {
+    color: white;
+    font-size:20px;
 }
-input:autofill{
-
-}
-.underline-text:hover {
-
-    border-bottom:solid;
-    border-color:white;
-    border-bottom-width:1px;
+#p-p-side-bar {
+    background-color: #362be0;
+    color: white;
 }

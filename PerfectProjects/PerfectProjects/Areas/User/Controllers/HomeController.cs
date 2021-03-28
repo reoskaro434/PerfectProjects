@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PerfectProjects.DataAccess.RepositoryPattern;
 using PerfectProjects.Model;
@@ -17,16 +18,20 @@ namespace PerfectProjects.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly SignInManager<IdentityUser> _signInManager;
         private IUnitOfWork _unitOfWork;
         private const int _projectsPerPage = SD.PROJECT_PER_PAGE;
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork, SignInManager<IdentityUser> signInManager)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
         {
+        
+
             return View(GetAccessibleShortPreviews(0));
         }
 
@@ -88,8 +93,6 @@ namespace PerfectProjects.Controllers
             var shortPrevievModels = new ShortPreviewModels();
             shortPrevievModels.shortPreviewModels = previewModels;
             shortPrevievModels.SkipCounter = skipCounter;
-          
-
             return shortPrevievModels;
         }
        

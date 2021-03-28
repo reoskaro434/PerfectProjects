@@ -79,8 +79,8 @@ namespace PerfectProjects.Areas.User.Controllers
         [HttpPost]
         public IActionResult RedirectToLongDescription()
         {
-        
-           return View("LongDescription");
+        //todo
+           return View("Index");
           
         }
     }

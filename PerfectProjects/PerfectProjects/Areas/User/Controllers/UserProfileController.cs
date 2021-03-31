@@ -16,6 +16,18 @@ namespace PerfectProjects.Areas.User.Controllers
     {
         IUnitOfWork _unitOfWork;
         SignInManager<IdentityUser> _signInManager;
+
+        private UserProfileViewModel _getProfileViewModel()
+        {
+            UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
+            string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            userProfileViewModel.ShortDescriptions = _unitOfWork.ShortDescriptions.Find(predicate => predicate.UserId == id);
+            userProfileViewModel.AboutMe = "This is a static information about user. Please, enlarge user's proporties and download it from db.";
+            userProfileViewModel.Nickname = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).FirstOrDefault().NickName;
+
+            return userProfileViewModel;
+        }
         public UserProfileController(SignInManager<IdentityUser> SignInManager, IUnitOfWork UnitOfWork)
         {
             _unitOfWork = UnitOfWork;
@@ -25,16 +37,7 @@ namespace PerfectProjects.Areas.User.Controllers
         public IActionResult Index()
         {
             if (_signInManager.IsSignedIn(User))
-            {
-                UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
-                string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-                userProfileViewModel.ShortDescriptions = _unitOfWork.ShortDescriptions.Find(predicate => predicate.UserId == id);
-                userProfileViewModel.AboutMe = "This is a static information about user. Please, enlarge user's proporties and download it from db.";
-                userProfileViewModel.Nickname = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).FirstOrDefault().NickName;
-
-                return View(userProfileViewModel);
-            }
+                return View(_getProfileViewModel());
             return View();
         }
         public IActionResult ChangeVisibleToFalse(int shortDescriptionId)
@@ -46,16 +49,7 @@ namespace PerfectProjects.Areas.User.Controllers
                 _unitOfWork.ShortDescriptions.Update(description);
                 _unitOfWork.Save();
                 if (_signInManager.IsSignedIn(User))
-                {
-                    UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
-                    string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-                    userProfileViewModel.ShortDescriptions = _unitOfWork.ShortDescriptions.Find(predicate => predicate.UserId == id);
-                    userProfileViewModel.AboutMe = "This is a static information about user. Please, enlarge user's proporties and download it from db.";
-                    userProfileViewModel.Nickname = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).FirstOrDefault().NickName;
-
-                    return View("Index", userProfileViewModel);
-                }
+                    return View("Index", _getProfileViewModel());
             }
             return View("Index");
         }
@@ -68,16 +62,7 @@ namespace PerfectProjects.Areas.User.Controllers
                 _unitOfWork.ShortDescriptions.Update(description);
                 _unitOfWork.Save();
                 if (_signInManager.IsSignedIn(User))
-                {
-                    UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
-                    string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-                    userProfileViewModel.ShortDescriptions = _unitOfWork.ShortDescriptions.Find(predicate => predicate.UserId == id);
-                    userProfileViewModel.AboutMe = "This is a static information about user. Please, enlarge user's proporties and download it from db.";
-                    userProfileViewModel.Nickname = _unitOfWork.ApplicationUsers.Find(predicate => predicate.Id == id).FirstOrDefault().NickName;
-
-                    return View("Index",userProfileViewModel);
-                }
+                    return View("Index", _getProfileViewModel());
             }
             
             return View("Index");

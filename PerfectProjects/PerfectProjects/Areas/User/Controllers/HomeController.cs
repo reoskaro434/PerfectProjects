@@ -30,9 +30,7 @@ namespace PerfectProjects.Controllers
 
         public IActionResult Index()
         {
-        
-
-            return View(GetAccessibleShortPreviews(0));
+          return View(GetAccessibleShortPreviews(0));
         }
 
         public IActionResult Privacy()
@@ -49,8 +47,10 @@ namespace PerfectProjects.Controllers
         {
             ShortPreviewModels shortPreviewModels = new ShortPreviewModels();
             shortPreviewModels = GetAccessibleShortPreviews(SkipCounter + _projectsPerPage);
+
             if (shortPreviewModels.shortPreviewModels.Count() <= 0)
                 shortPreviewModels = GetAccessibleShortPreviews(SkipCounter);
+
             return View("Index", shortPreviewModels);
         }
         public IActionResult ClickedBackButton(int SkipCounter)

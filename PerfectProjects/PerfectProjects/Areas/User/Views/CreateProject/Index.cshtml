@@ -1,0 +1,23 @@
+﻿
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@model PerfectProjects.Model.Description
+
+<div class="text-center">
+    <br />
+    <h2>Create description</h2>
+    <br />
+    <br />
+</div>
+<div>
+
+    <form method="post" enctype="multipart/form-data">
+        <input hidden asp-for="Id" />
+        <div class="offset-lg-6 col-lg-2">
+            <button class="form-control btn btn-light border" type="submit" asp-action="Create">next</button>
+        </div>
+    </form>
+</div>
+<script src="~/js/CreateProjectShortController.js"></script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

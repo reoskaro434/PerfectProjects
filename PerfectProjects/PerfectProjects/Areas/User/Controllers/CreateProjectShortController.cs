@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using PerfectProjects.Utility;
+using Microsoft.AspNetCore.Routing;
 
 namespace PerfectProjects.Areas.User.Controllers
 {
@@ -76,12 +77,14 @@ namespace PerfectProjects.Areas.User.Controllers
             return View("Index", _unitOfWork.ShortDescriptions.Find(predicate => predicate.Id == id).FirstOrDefault());
         }
 
-        [HttpPost]
-        public IActionResult RedirectToLongDescription()
+/*        [HttpPost]
+        public void RedirectToLongDescription()
         {
-        
-           return View("LongDescription");
-          
-        }
+            var routeValue = new RouteValueDictionary   
+        (new { action = "View", controller = "Author" });
+            RedirectToRoute(routeValue);
+            Response.Redirect("~/CreateProject/Index");
+
+        }*/
     }
 }

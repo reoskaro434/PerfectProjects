@@ -12,15 +12,17 @@
 
     <form method="post" enctype="multipart/form-data">
         <input hidden asp-for="Id" />
+        <p id="picCounter">0</p>
 
         <div id="description"></div>
-        <input id="photo" type="file" accept="image / jpeg, image / png" name="file" onchange="loadFile(event)" onstyle="display: none;">
+        <div class="form-group col-lg-8">
+        </div>
         <div class="row">
             <div class="col-lg-2">
-                <button id="image" class="form-control btn btn-light border">image</button>
+                <label id="image" onclick="appendImage()" class=" btn form-control btn btn-light border">image</label>
             </div>
             <div class="col-lg-2">
-                <button id="text" class="form-control btn btn-light border">text</button>
+                <label id="text" onclick="appendTextArea()" class="form-control btn btn-light border">text</label>
             </div>
             <div class="offset-lg-6 col-lg-2">
                 <button class="form-control btn btn-success border" type="submit" asp-action="Create">finish</button>
@@ -28,19 +30,8 @@
         </div>
     </form>
 </div>
-<script src="~/js/CreateProjectShortController.js"></script>
+<script src="~/js/createProject.js"></script>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-
-<script>
-
-    $(document).ready(function () {
-        $("#image").click(function () {
-            var anImage = '<input id="photo" type="file" accept="image / jpeg, image / png" name="file" onchange="loadFile(event)" onstyle="display: none;">'
-            $("#description").add(anImage);
-            $("#photo").trigger('click');
-        });
-        $("#photo").
-    });
-</script>

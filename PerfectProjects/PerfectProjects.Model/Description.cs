@@ -13,12 +13,16 @@ namespace PerfectProjects.Model
 
         [Key]
         public int Id { get; set; }
-
-        public IEnumerable<string> LongDescriptions { get; set; }
+        public string LongDescription { get; set; }
 
         [MaxLength(83886080)]
-        public IEnumerable<byte[]> Images { get; set; }
-
+        public byte[] Image1 { get; set; }
+        [MaxLength(83886080)]
+        public byte[] Image2 { get; set; }
+        [MaxLength(83886080)]
+        public byte[] Image3 { get; set; }
+        [MaxLength(83886080)]
+        public byte[] Image4 { get; set; }
         public ShortDescription ShortDescription { get; set; }
     }
 }

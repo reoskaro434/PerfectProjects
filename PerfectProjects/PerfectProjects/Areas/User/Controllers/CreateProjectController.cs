@@ -13,5 +13,13 @@ namespace PerfectProjects.Areas.User.Controllers
         {
             return View();
         }
+        public IActionResult Create()
+        {
+
+
+
+            //model required
+            return View("Preview");
+        }
     }
 }

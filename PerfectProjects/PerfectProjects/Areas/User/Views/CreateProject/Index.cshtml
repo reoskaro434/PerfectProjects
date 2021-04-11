@@ -1,6 +1,6 @@
 ﻿
 @{ Layout = "~/Views/Shared/_Layout.cshtml"; }
-@model PerfectProjects.Model.Description
+@model PerfectProjects.Model.ViewModel.DescriptionCreateViewModel
 
 <div class="text-center">
     <br />
@@ -11,27 +11,43 @@
 <div>
 
     <form method="post" enctype="multipart/form-data">
-        <input hidden asp-for="Id" />
-        <p id="picCounter">0</p>
-
-        <div id="description"></div>
-        <div class="form-group col-lg-8">
+        <input hidden asp-for="@Model.Id" />
+        <div id="description">
+            <div class="form-group col-lg-8 offset-sm-2">
+                <label>Description</label>
+                <textarea asp-for="@Model.Description" id="textArea" rows="15" class="form-control"></textarea>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>
+             <div class="form-group col-lg-8 offset-sm-2">
+            <p><input hidden id="photo1" type="file" accept="image/jpeg,image/png" name="file" onchange="loadFile1(event)" onstyle="display: none;"></p>
+            <p><label for="file" style="cursor: pointer;" onclick="document.getElementById('photo1').click();" color:blue">image 1</label></p>
+            <p><img id="output1" class="flex-fill" /></p>
+        </div>
+        <div class="form-group col-lg-8 offset-sm-2">
+            <p><input hidden id="photo2" type="file" accept="image/jpeg,image/png" name="file" onchange="loadFile2(event)" onstyle="display: none;"></p>
+            <p><label for="file" style="cursor: pointer;" onclick="document.getElementById('photo2').click();" color:blue">image 2</label></p>
+            <p><img id="output2" class="flex-fill" /></p>
+        </div>
+        <div class="form-group col-lg-8 offset-sm-2">
+            <p><input hidden id="photo3" type="file" accept="image/jpeg,image/png" name="file" onchange="loadFile3(event)" onstyle="display: none;"></p>
+            <p><label for="file" style="cursor: pointer;" onclick="document.getElementById('photo3').click();" color:blue">image 3</label></p>
+            <p><img id="output3" class="flex-fill" /></p>
+        </div>
+        <div class="form-group col-lg-8 offset-sm-2">
+            <p><input hidden id="photo4" type="file" accept="image/jpeg,image/png" name="file" onchange="loadFile4(event)" onstyle="display: none;"></p>
+            <p><label for="file" style="cursor: pointer;" onclick="document.getElementById('photo4').click();" color:blue">image 4</label></p>
+            <p><img id="output4" class="flex-fill" /></p>
+        </div>
         </div>
         <div class="row">
-            <div class="col-lg-2">
-                <label id="image" onclick="appendImage()" class=" btn form-control btn btn-light border">image</label>
-            </div>
-            <div class="col-lg-2">
-                <label id="text" onclick="appendTextArea()" class="form-control btn btn-light border">text</label>
-            </div>
-            <div class="offset-lg-6 col-lg-2">
+            <div class="offset-lg-8 col-lg-2">
                 <button class="form-control btn btn-success border" type="submit" asp-action="Create">finish</button>
             </div>
         </div>
     </form>
 </div>
-<script src="~/js/createProject.js"></script>
 
+<script src="~/js/createProject.js"></script>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
